@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build",
+        "type": "shell",
+        "command": "${workspaceRoot}/script/build.bat",
+        "problemMatcher": {
+          "source": "compile",
+          "fileLocation": [
+            "relative",
+            "${workspaceRoot}"
+          ],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        }
+      },
+      {
+        "label": "run",
+        "type": "shell",
+        "command": "${workspaceRoot}/script/run.bat",
+        "problemMatcher": [
+          "$gcc"
+        ]
+      },
+      {
+        "label": "clean",
+        "type": "shell",
+        "command": "${workspaceRoot}/script/clean.bat"
+      },
+      {
+        "label": "build_run",
+        "type": "shell",
+        "command": "${workspaceRoot}/script/build_run.bat"
+      }
+    ]
+  }
